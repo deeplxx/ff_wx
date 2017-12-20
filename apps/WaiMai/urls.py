@@ -1,6 +1,6 @@
 from django.urls import path
-import apps.WaiMai.views
+from apps.WaiMai.views import *
 
 urlpatterns = [
-    path('', apps.WaiMai.views.Home, name='Home')
+    path('', Home, name='Home')
 ]
