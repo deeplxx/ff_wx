@@ -7,7 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 @csrf_exempt
-def Home(request):
+def home(request):
     if request.method == "GET":
         # 接收微信服务器get请求发过来的参数
         signature = request.GET.get('signature', None)
