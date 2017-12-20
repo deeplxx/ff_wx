@@ -19,5 +19,5 @@ from apps.WaiMai import views as waimai_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('WaiMai/', waimai_views.index, name='index')  # 当访问WaiMai时调用哪个函数
+    path('', waimai_views.index, name='index')  # 当访问WaiMai时调用哪个函数
 ]
