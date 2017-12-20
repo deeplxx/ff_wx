@@ -14,10 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from apps.WaiMai import views as waimai_views
+from django.urls import path,include
+# from apps.WaiMai import views as waimai_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', waimai_views.index, name='index')  # 当访问WaiMai时调用哪个函数
+    # path('', waimai_views.index, name='index')  # 当访问WaiMai时调用哪个函数
+    path('WaiMai/', include('apps.WaiMai.urls', namespace='WaiMai'))
 ]
