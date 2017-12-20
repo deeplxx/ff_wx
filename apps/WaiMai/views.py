@@ -1,11 +1,12 @@
 from django.shortcuts import render
 import hashlib
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
 
 # Create your views here.
 
-
+@csrf_exempt
 def index(request):
     if request.method == "GET":
         # 接收微信服务器get请求发过来的参数
