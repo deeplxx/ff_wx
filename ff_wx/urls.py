@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from apps.WaiMai import views as waimai_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('WaiMai/', 'apps.WaiMai.urls')
+    path('WaiMai/', waimai_views.index)  # 当访问WaiMai时调用哪个函数
 ]
