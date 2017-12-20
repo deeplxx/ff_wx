@@ -20,5 +20,5 @@ from django.urls import path,include
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', waimai_views.index, name='index')  # 当访问WaiMai时调用哪个函数
-    path('WaiMai/', include('apps.WaiMai.urls', namespace='WaiMai'))
+    path('WaiMai/', include('apps.WaiMai.urls', namespace='apps.WaiMai'))
 ]
