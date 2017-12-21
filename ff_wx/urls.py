@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 # from apps.WaiMai import views as waimai_views
+from wm import views as wm_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', waimai_views.index, name='index')  # 当访问WaiMai时调用哪个函数
-    path('WaiMai/', include('apps.WaiMai.urls', namespace='apps.WaiMai'))
+    path('wm/', wm_views.index, name='index')
 ]
