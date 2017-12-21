@@ -17,13 +17,13 @@ def index(request):
         nonce = request.GET.get('nonce', '')
         echostr = request.GET.get('echostr', '')
         # 服务器配置中的token
-        token = 'xuy'
+        token = 'ffwxwm2017'
 
         # 把参数放到list中排序后合成一个字符串，再用sha1加密得到新的字符串与微信发来的signature对比，如果相同就返回echostr给服务器，校验通过
         hashlist = [token, timestamp, nonce]
         hashlist.sort()
         hashstr = ''.join([s for s in hashlist])
-        hashstr = hashlib.sha1(hashstr.encode('utf-8')).hexdigest()
+        hashstr = hashlib.sha1(hashstr.encode('utf-8')).hexdigest()  # 字符串得编码后才能hashing
         if hashstr == signature:
             return HttpResponse(echostr)
         else:
