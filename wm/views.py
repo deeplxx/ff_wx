@@ -23,7 +23,7 @@ def index(request):
         hashlist = [token, timestamp, nonce]
         hashlist.sort()
         hashstr = ''.join([s for s in hashlist])
-        hashstr = hashlib.sha1(hashstr).hexdigest()
+        hashstr = hashlib.sha1(hashstr.encode('utf-8')).hexdigest()
         if hashstr == signature:
             return HttpResponse(echostr)
         else:
