@@ -27,7 +27,7 @@ def index(request):
         if hashstr == signature.encode('utf-8'):
             return HttpResponse(echostr)
         else:
-            return HttpResponse("field")
+            return HttpResponse("field:" + hashstr)
     else:
         othercontent = autoreply(request)
         return HttpResponse(othercontent)
