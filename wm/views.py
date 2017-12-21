@@ -1,4 +1,3 @@
-# Create your views here.
 # -*- coding: utf-8 -*-
 import hashlib
 # import json
@@ -23,8 +22,8 @@ def index(request):
         hashlist = [token, timestamp, nonce]
         hashlist.sort()
         hashstr = ''.join([s for s in hashlist])
-        hashstr = hashlib.sha1(hashstr.encode('utf-8')).hexdigest()  # 字符串得编码后才能hashing
-        if hashstr == signature.encode('utf-8'):
+        hashstr = hashlib.sha1(hashstr).hexdigest()  # 字符串得编码后才能hashing
+        if hashstr == signature:
             return HttpResponse(echostr)
         else:
             return HttpResponse("field:" + hashstr)
