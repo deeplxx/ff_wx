@@ -24,7 +24,7 @@ def index(request):
         hashlist.sort()
         hashstr = ''.join([s for s in hashlist])
         hashstr = hashlib.sha1(hashstr.encode('utf-8')).hexdigest()  # 字符串得编码后才能hashing
-        if hashstr == signature:
+        if hashstr == signature.encode('utf-8'):
             return HttpResponse(echostr)
         else:
             return HttpResponse("field")
