@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from wm import views as wm_views
 from werobot.contrib.django import make_view
-from wm.robot import robot
+from robot import robot
 
 urlpatterns = [
     path('admin/', admin.site.urls),
