@@ -12,10 +12,10 @@ from django.http import HttpResponse
 def index(request):
     if request.method == "GET":
         # 接收微信服务器get请求发过来的参数
-        signature = request.GET.get('signature')
-        timestamp = request.GET.get('timestamp')
-        nonce = request.GET.get('nonce')
-        echostr = request.GET.get('echostr')
+        signature = request.GET.get('signature', '')
+        timestamp = request.GET.get('timestamp', '')
+        nonce = request.GET.get('nonce', '')
+        echostr = request.GET.get('echostr', '')
         # 服务器配置中的token
         token = 'xuy'
 
