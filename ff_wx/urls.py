@@ -22,5 +22,6 @@ from ff_wx.robot import myrobot
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', waimai_views.index, name='index')  # 当访问WaiMai时调用哪个函数
-    path('wm/', make_view(myrobot))
+    # path('wm/', make_view(myrobot))
+    path('wm/', wm_views.index, name='index')
 ]
