@@ -17,11 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from wm import views as wm_views
 from werobot.contrib.django import make_view
-from ff_wx.robot import myrobot
+from wm import robot
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', waimai_views.index, name='index')  # 当访问WaiMai时调用哪个函数
-    # path('wm/', make_view(myrobot))
-    path('wm/', wm_views.index, name='index')
+    path('wm/', make_view(robot.myrobot))
+    # path('wm/', wm_views.index, name='index')
 ]
