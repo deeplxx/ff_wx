@@ -1,9 +1,9 @@
 # coding=utf8
 from werobot import WeRoBot
 
-robot = WeRoBot(token='ffwxwm2017')
+myrobot = WeRoBot(token='ffwxwm2017')
 
 
-@robot.handler
+@myrobot.handler
 def hello(message):
     return 'hello world'
