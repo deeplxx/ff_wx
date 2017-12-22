@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 from werobot import WeRoBot
 
-myrobot = WeRoBot(token='ffwxwm2017')
+token = 'ffwxwm2017'
+myrobot = WeRoBot(token=token.encode('utf-8'))
 
 
 @myrobot.handler
